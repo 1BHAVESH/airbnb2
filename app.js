@@ -113,6 +113,12 @@ app.use((req, res, next)=>{
 //     res.render("./listings/room.ejs", {finds});
 // })
 
+
+
+// listings routes
+
+app.use("/listings", listingsRouter);
+
 app.get("/listings/trend",  async(req, res) =>{
     let finds = await Listing.find({category: "trand"});
 
@@ -121,10 +127,6 @@ app.get("/listings/trend",  async(req, res) =>{
       
     res.render("./listings/trend.ejs", {finds});
 })
-
-// listings routes
-
-app.use("/listings", listingsRouter);
 
 // review routes
 
