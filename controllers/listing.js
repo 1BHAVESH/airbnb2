@@ -7,6 +7,9 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index = async(req, res) =>{
     let allListings =  await Listing.find({});
+
+     
+    
     res.render("./listings/index.ejs", {allListings}); 
  };
 
@@ -53,6 +56,7 @@ module.exports.createNewListings = async(req, res, next) =>{
    let listing = req.body.listing;
    console.log("--------->",listing.category);
    const newListing = new Listing(listing);
+//    newListing.category = req.body.listing.category;
    newListing.owner = req.user._id;
    newListing.image = {url, filename};
 

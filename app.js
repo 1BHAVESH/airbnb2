@@ -104,8 +104,13 @@ app.use((req, res, next)=>{
 //     res.send(registerdUser);
 // })
 
-app.get("/listings/rooms",  (req, res) =>{
-    res.render("./listings/room.ejs");
+app.get("/listings/rooms",  async(req, res) =>{
+    let finds = await Listing.findOne({category: "rooms"});
+
+    console.log(finds);
+    
+      
+    res.render("./listings/room.ejs", {finds});
 })
 
 // listings routes
