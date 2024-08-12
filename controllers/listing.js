@@ -6,11 +6,18 @@ const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index = async(req, res) =>{
-    let allListings =  await Listing.find({});
+    let finds = await Listing.find({category: "main"});
 
-     
+    // console.log(finds);
     
-    res.render("./listings/index.ejs", {allListings}); 
+      
+    res.render("./listings/index.ejs", {finds});
+
+    //  if(allListings.category == "trand"){
+        
+    //  }
+    
+    // res.render("./listings/index.ejs", {allListings}); 
  };
 
  module.exports.renderNewForm = (req, res) =>{
@@ -110,3 +117,39 @@ module.exports.destroy = async(req, res) =>{
     res.redirect("/listings");
     
 }
+
+module.exports.roomsShow = async(req, res) =>{
+    let finds = await Listing.find({category: "rooms"});
+
+    // console.log(finds);
+    
+      
+    res.render("./listings/room.ejs", {finds});
+ };
+
+ module.exports.cities = async(req, res) =>{
+    let finds = await Listing.find({category: "top cities"});
+
+    // console.log(finds);
+    
+      
+    res.render("./listings/city.ejs", {finds});
+ };
+
+ module.exports.mountain = async(req, res) =>{
+    let finds = await Listing.find({category: "mountains"});
+
+    // console.log(finds);
+    
+      
+    res.render("./listings/mountain.ejs", {finds});
+ };
+
+ module.exports.Castles = async(req, res) =>{
+    let finds = await Listing.find({category: "Castles"});
+
+    // console.log(finds);
+    
+      
+    res.render("./listings/Castles.ejs", {finds});
+ };

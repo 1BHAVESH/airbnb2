@@ -104,13 +104,22 @@ app.use((req, res, next)=>{
 //     res.send(registerdUser);
 // })
 
-app.get("/listings/rooms",  async(req, res) =>{
-    let finds = await Listing.findOne({category: "rooms"});
+// app.get("/listings/rooms",  async(req, res) =>{
+//     let finds = await Listing.find({category: "rooms"});
+
+//     console.log(finds);
+    
+      
+//     res.render("./listings/room.ejs", {finds});
+// })
+
+app.get("/listings/trend",  async(req, res) =>{
+    let finds = await Listing.find({category: "trand"});
 
     console.log(finds);
     
       
-    res.render("./listings/room.ejs", {finds});
+    res.render("./listings/trend.ejs", {finds});
 })
 
 // listings routes

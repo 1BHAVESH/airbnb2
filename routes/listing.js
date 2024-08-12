@@ -15,9 +15,27 @@ const upload = multer({storage})
 router.route("/")
 .get(wrapAsync(listingController.index))
 .post(isLoggedIn,
-    upload.single("listing[image]"),
-    validateListing,
-    wrapAsync(listingController.createNewListings));
+ upload.single("listing[image]"),
+ validateListing,
+ wrapAsync(listingController.createNewListings));
+
+//room route
+
+router.route("/rooms")
+.get(wrapAsync(listingController.roomsShow));
+
+router.route("/cities")
+.get(wrapAsync(listingController.cities));
+
+router.route("/mountains")
+.get(wrapAsync(listingController.mountain));
+
+
+
+router.route("/Castles")
+.get(wrapAsync(listingController.Castles));
+
+
 
 //new route
 
