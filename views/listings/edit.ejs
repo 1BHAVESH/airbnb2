@@ -7,6 +7,60 @@
                 <h3>Editing Your list</h3>
 
                 <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+                    
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="listing[category]" id="flexRadioDefault1" value="rooms">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Rooms
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="listing[category]" id="flexRadioDefault2" value="mountains">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Mountain
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="listing[category]" id="flexRadioDefault2" value="trand">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              trending
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="listing[category]" id="flexRadioDefault2" value="top cities">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                top cities
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="listing[category]" id="flexRadioDefault2" value="main">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                main page
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="listing[category]" id="flexRadioDefault2" checked value="Castles">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Castles
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="listing[category]" id="flexRadioDefault2" value="Pools">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Pools
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="listing[category]" id="flexRadioDefault2" checked value="camps">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                camps
+                            </label>
+                        </div>
+                    </div>
+    
+
+
                     <div class="mb-3">
                         <lable for="title" class="form-label">Title</lable>
                         <input name="listing[title]" value="<%=listing.title%>" type="text" class="form-control" required>
