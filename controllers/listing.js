@@ -148,8 +148,53 @@ module.exports.roomsShow = async(req, res) =>{
  module.exports.Castles = async(req, res) =>{
     let finds = await Listing.find({category: "Castles"});
 
+    console.log(finds);
+
     // console.log(finds);
     
       
     res.render("./listings/Castles.ejs", {finds});
  };
+
+ module.exports.trand = async(req, res) =>{
+    let finds = await Listing.find({category: "trand"}); 
+   
+ res.render("./listings/trend.ejs", {finds});
+ };
+
+ 
+
+ module.exports.Pools = async(req, res) =>{
+    let finds = await Listing.find({category: "Pools"}); 
+   
+ res.render("./listings/Pools.ejs", {finds});
+ };
+
+ 
+
+ module.exports.camps = async(req, res) =>{
+    let finds = await Listing.find({category: "camps"}); 
+
+    console.log(finds);
+   
+ res.render("./listings/camps.ejs", {finds});
+ };
+
+ module.exports.search = async(req, res) =>{
+    let finds = await Listing.find({category: "camps"}); 
+
+    console.log(finds);
+   
+ res.render("./listings/camps.ejs", {finds});
+ };
+
+
+//  module.exports.search = async(req, res) =>{
+    
+
+//     let {country} = req.query.listing.country;
+//     console.log(`Country: ${country}`);
+   
+ 
+//  };
+ 

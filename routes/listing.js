@@ -32,8 +32,26 @@ router.route("/mountains")
 
 
 
+
 router.route("/Castles")
 .get(wrapAsync(listingController.Castles));
+
+router.route("/trand")
+.get(wrapAsync(listingController.trand));
+
+
+
+router.route("/Pools")
+.get(wrapAsync(listingController.Pools));
+
+
+
+router.route("/camps")
+.get(wrapAsync(listingController.camps));
+
+// router.route("/search")
+// .get(wrapAsync(listingController.search));
+
 
 
 

@@ -113,6 +113,7 @@ app.use((req, res, next)=>{
 //     res.render("./listings/room.ejs", {finds});
 // })
 
+<<<<<<< HEAD
 
 
 // listings routes
@@ -121,13 +122,47 @@ app.use("/listings", listingsRouter);
 
 app.get("/listings/trend",  async(req, res) =>{
     let finds = await Listing.find({category: "trand"});
+=======
+>>>>>>> 1093ccb (new changes)
 
-    console.log(finds);
+
+<<<<<<< HEAD
+=======
+// listings routes
+
+app.get("/", async(req, res) =>{
+    let finds = await Listing.find({category: "main"});
+
+    // console.log(finds);
     
       
-    res.render("./listings/trend.ejs", {finds});
+    res.render("./listings/index.ejs", {finds});
 })
 
+app.post("/listings/search", async(req, res) =>{
+    let {country} = req.body.listing;
+    console.log(country);
+
+    let finds = await Listing.find({country: country});
+
+    res.render("./listings/search.ejs", {finds});
+
+    
+
+})
+
+app.use("/listings", listingsRouter);
+
+// app.get("/listings/trend",  async(req, res) =>{
+//     let finds = await Listing.find({category: "trand"});
+
+//     console.log(finds);
+    
+      
+//     res.render("./listings/trend.ejs", {finds});
+// })
+
+>>>>>>> 1093ccb (new changes)
 // review routes
 
 
