@@ -144,7 +144,9 @@ app.post("/listings/search", async(req, res) =>{
     let {country} = req.body.listing;
     console.log(country);
 
-    let finds = await Listing.find({country: country});
+    //let finds = await Listing.find({country: country});
+
+    let finds = await Listing.find({ country: new RegExp(`^${country}$`, 'i') });
 
     res.render("./listings/search.ejs", {finds});
 
